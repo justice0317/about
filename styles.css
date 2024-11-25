@@ -1,0 +1,155 @@
+/* 基本樣式 */
+body {
+    margin: 0;
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    background-color: #92ABBA;
+    font-weight: bold;
+}
+
+/* 頂部標題區 */
+.top-banner {
+    width: 100%;
+    height: 160px;
+    background-color: #455264;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+}
+
+.menu-btn {
+    position: absolute;
+    left: -20px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.main-title {
+    font-size: 75px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 彈跳視窗 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* 預設完全收合 */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 2; /* 彈跳視窗在最上層 */
+}
+
+/* 彈跳視窗的文字按鈕 */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;  /* 按鈕垂直排列 */
+    gap: 20px; /* 按鈕之間的間距 */
+    flex-grow: 1;
+    justify-content: flex-start; /* 從上方開始排列 */
+    margin-top: 20px; /* 與上方有些間距 */
+}
+
+.sidebar-menu li {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 按鈕居中 */
+    align-items: center;
+    position: relative;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #455264;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center; /* 讓文字按鈕居中 */
+}
+
+/* 橫線 */
+.sidebar-menu hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    width: 70%;
+    margin-top: 10px; /* 橫線和按鈕之間有些距離 */
+}
+
+/* 調整收回按鈕位置 */
+.close-btn {
+    align-self: flex-start;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #455264;
+    cursor: pointer;
+    left: -20px; /* 靠左對齊 */
+    margin-bottom: 20px; /* 與下方按鈕保持間距 */
+}
+
+/* 主要內容 */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.main-title-box {
+    width: 60%;
+    max-width: 900px;
+    text-align: left;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #455264;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #F8C8C8;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    font-size: 25px;
+    color: white;
+    line-height: 1.8;
+}
+
+/* 遮罩效果 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+}
